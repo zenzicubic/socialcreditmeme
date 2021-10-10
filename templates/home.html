@@ -7,12 +7,80 @@
 	</head>
 	<body>
 		<embed name="bg" src="/static/Dehao Zhang - Ching Chang Hon Chi-[AudioTrimmer.com].mp3" loop="true" hidden="true" autostart="true">
-		<p class="header">Social Credit Test</p>
-		<button class="fullscreen" onclick="begin()">Begin</button>
-		<form id="response" action="/question" hidden><input name="no" id="no" value="1"><input name="score" id="score" value="0"></form>
+		<div id="startdiv">
+			<p class="header">Social Credit Test</p>
+			<button class="fullscreen" onclick="begin()">Begin</button>
+		</div>
+		<div id="options" hidden>
+			<p class="header" id="question">Question #: #</p>
+			<button class="button-top" id="a1" onclick="a1()">#</button><br>
+			<button class="button-bottom" id="a2" onclick="a2()">#</button>
+		</div>
+		<div id="im" hidden>
+			<div id="ims">
+			</div>
+			<button onclick="next()" class="button-bottom">Next</button>
+		</div>
+		<span id="buffer" hidden></span>
         <script>
+        	let q = 0;
+        	let res = 0;
+        	let ans = 0;
+        	let score = 0;
         	function begin(){
-        		document.getElementById("response").submit();
+        		document.getElementById("startdiv").hidden = true;
+        		getq(q);
+        		document.getElementById("options").hidden = false;
+        	}
+        	function getq(q1){
+        		xhr = new XMLHttpRequest();
+        		xhr.onload=function(){
+        			document.getElementById("buffer").innerHTML=xhr.responseText();
+        			data = JSON.parse(document.getElementById("buffer").innerHTML);
+        			res=data[0];
+        			ans=data[1][2];
+        			document.getElementById("a1").innerHTML=data[1][0];
+        			document.getElementById("a2").innerHTML=data[1][1];
+        			document.getElementById("question").innerHTML=`Question ${q.toString()}: ${data[1][3]}`;
+        		}
+        		xhr.open("GET", "/question?index="+q1.toString(), true);
+        		xhr.send();
+        	}
+        	function a1(){
+        		if (ans == 0){
+        			score += res;
+        			document.getElementById("options").hidden = true;
+        			document.getElementById("ims").innerHTML = `<img src="${res.toString()}">`
+        			document.getElementById("im").hidden = false;
+        		} else {
+        			score -= res;
+        			document.getElementById("options").hidden = true;
+        			document.getElementById("ims").innerHTML = `<img src="-${res.toString()}">`
+        			document.getElementById("im").hidden = false;
+        		}
+        	}
+        	function a2(){
+        		if (ans == 1){
+        			score += res;
+        			document.getElementById("options").hidden = true;
+        			document.getElementById("ims").innerHTML = `<img src="${res.toString()}">`
+        			document.getElementById("im").hidden = false;
+        		} else {
+        			score -= res;
+        			document.getElementById("options").hidden = true;
+        			document.getElementById("ims").innerHTML = `<img src="-${res.toString()}">`
+        			document.getElementById("im").hidden = false;
+        		}
+        	}
+        	function next(){
+        		if (q == 4){
+        			console.log("Done")
+        		} else {
+        			q ++;
+        			getq(q)
+        			document.getElementById("im").hidden = true;
+        			document.getElementById("options").hidden = false;
+        		}
         	}
         </script>
 	</body>
