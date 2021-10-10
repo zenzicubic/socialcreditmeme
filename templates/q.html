@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Social Credit test</title>
+		<link rel="stylesheet" type="text/css" href="/static/ssheet1.css">
+		<link rel="shortcut icon" href="/static/favicon.png">
+	</head>
+	<body>
+		<embed name="bg" src="/static/Dehao Zhang - Ching Chang Hon Chi.mp3" loop="false" hidden="true" autostart="true">
+		<p class="header">Question {{no}}: {{head}}</p>
+		<button class="button-top" onclick="a1()">{{a1}}</button><br>
+		<button class="button-top" onclick="a2()">{{a2}}</button>
+		<form id="response" action="/question" hidden><input name="no" id="no" value="{{no}}"><input name="score" id="score" value="{{score}}"><input id="ans" name="ans" value="2"></form>
+        <script>
+        	function a1(){
+        		document.getElementById("ans").value="0";
+        		document.getElementById("response").submit();
+        	}
+        	function a2(){
+        		document.getElementById("ans").value="1";
+        		document.getElementById("response").submit();
+        	}
+        </script>
+	</body>
+</html>

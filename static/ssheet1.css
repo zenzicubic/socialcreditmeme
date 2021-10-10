@@ -11,18 +11,26 @@ button {
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 16px;
+	font-size: 30px;
 	color: #5e2214;
 }
 button:hover {
 	background-color: #FF0114;
 }
 body {
-	background-color:#FFF0D9;
+	background-image:  url("/static/flag.png");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 @media screen and (max-width: 600px) {
-	.option {
-		height: 25%;
+	.button-top {
+		height: 48%;
+		padding: 25% 10px;
+		width: 100%;
+	}
+	.button-bottom {
+		height: 48%;
+		padding: 25% 10px;
 		width: 100%;
 	}
 	.header {
@@ -36,9 +44,15 @@ body {
 	}
 }
 @media screen and (min-width: 600px) {
-	.option {
-		height: 50%;
-		width: 50%;
+	.button-top {
+		height: 48%;
+		padding: 9% 10px;
+		width: 100%;
+	}
+	.button-bottom {
+		height: 48%;
+		padding: 9% 10px;
+		width: 100%;
 	}
 	.header {
 		font-size:  40px;
@@ -49,20 +63,4 @@ body {
 		padding: 18% 10px;
 		width: 100%;
 	}
-}
-.button-topleft {
-	position: absolute;
-  	bottom: 10px;
-}
-.button-bottomleft {
-	
-}
-.button-topright {
-
-}
-.button-bottomright {
-	
-}
-.header {
-
 }

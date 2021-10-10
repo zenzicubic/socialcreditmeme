@@ -2,14 +2,18 @@
 <html>
 	<head>
 		<title>Social Credit test</title>
-		<link rel="stylesheet" type="text/css" href="/static/ssheet.css">
+		<link rel="stylesheet" type="text/css" href="/static/ssheet1.css">
 		<link rel="shortcut icon" href="/static/favicon.png">
 	</head>
 	<body>
 		<embed name="bg" src="/static/Dehao Zhang - Ching Chang Hon Chi.mp3" loop="false" hidden="true" autostart="true">
 		<p class="header">Social Credit Test</p>
 		<button class="fullscreen" onclick="begin()">Begin</button>
+		<form id="response" action="/question" hidden><input name="no" id="no" value="1"><input name="score" id="score" value="0"></form>
         <script>
+        	function begin(){
+        		document.getElementById("myForm").submit();
+        	}
         </script>
 	</body>
 </html>
