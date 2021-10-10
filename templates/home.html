@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Social Credit test</title>
-		<link rel="stylesheet" type="text/css" href="/static/ssheet1.css">
+		<link rel="stylesheet" type="text/css" href="/static/stsheet.css">
 		<link rel="shortcut icon" href="/static/favicon.png">
 	</head>
 	<body>
@@ -35,7 +35,7 @@
         	function getq(q1){
         		xhr = new XMLHttpRequest();
         		xhr.onload=function(){
-        			document.getElementById("buffer").innerHTML=xhr.responseText();
+        			document.getElementById("buffer").innerHTML=xhr.responseText;
         			data = JSON.parse(document.getElementById("buffer").innerHTML);
         			res=data[0];
         			ans=data[1][2];
@@ -68,7 +68,7 @@
         		} else {
         			score -= res;
         			document.getElementById("options").hidden = true;
-        			document.getElementById("ims").innerHTML = `<img src="-${res.toString()}">`
+        			document.getElementById("ims").innerHTML = `<img class="img" src="-${res.toString()}">`
         			document.getElementById("im").hidden = false;
         		}
         	}
