@@ -58,12 +58,12 @@
         		if (ans == 0){
         			score += res;
         			document.getElementById("options").hidden = true;
-        			document.getElementById("ims").innerHTML = `<img src="${res.toString()}">`
+        			document.getElementById("ims").innerHTML = `<img class="img" src="/static/${res.toString()}.png">`
         			document.getElementById("im").hidden = false;
         		} else {
         			score -= res;
         			document.getElementById("options").hidden = true;
-        			document.getElementById("ims").innerHTML = `<img src="-${res.toString()}">`
+        			document.getElementById("ims").innerHTML = `<img class="img" src="/static/-${res.toString()}.png">`
         			document.getElementById("im").hidden = false;
         		}
         	}
@@ -71,12 +71,12 @@
         		if (ans == 1){
         			score += res;
         			document.getElementById("options").hidden = true;
-        			document.getElementById("ims").innerHTML = `<img src="${res.toString()}">`
+        			document.getElementById("ims").innerHTML = `<img class="img" src="/static/${res.toString()}.png">`
         			document.getElementById("im").hidden = false;
         		} else {
         			score -= res;
         			document.getElementById("options").hidden = true;
-        			document.getElementById("ims").innerHTML = `<img class="img" src="-${res.toString()}">`
+        			document.getElementById("ims").innerHTML = `<img class="img" src="/static/-${res.toString()}.png">`
         			document.getElementById("im").hidden = false;
         		}
         	}
