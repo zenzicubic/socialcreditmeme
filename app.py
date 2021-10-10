@@ -14,7 +14,7 @@ def home():
 
 @app.route("/question")
 def question():
-    i=int(request.get["index"])
+    i=int(request.args["index"])
     return Markup(str([questions[i], results[i]]))
 
 if __name__ == "__main__":
