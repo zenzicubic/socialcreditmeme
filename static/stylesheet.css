@@ -20,6 +20,7 @@ button {
 	width: 100%;
 }
 .center {
+	display: inline;
 	text-align: center;
 }
 button:hover {
