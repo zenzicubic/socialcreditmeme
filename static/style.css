@@ -25,24 +25,25 @@ button:hover {
 body {
 	background-color:#FFF0D9;
 }
-@media (pointer:none), (pointer:coarse) {
+.header {
+	text-align: center;
+}
+@media screen and (max-width: 600px) {
 	.option {
 		height: 25%;
 		width: 100%;
 	}
 	.header {
 		font-size:  10px;
-		text-align: center;
 	}
 }
-@media (pointer:fine) {
+@media screen and (min-width: 600px) {
 	.option {
 		height: 50%;
 		width: 50%;
 	}
 	.header {
 		font-size:  40px;
-		text-align: center;
 	}
 }
 .button-topleft {
