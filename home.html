@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Social Credit test</title>
+		<link rel="stylesheet" type="text/css" href="/static/stylesheet.css">
+		<link rel="shortcut icon" href="/static/favicon.ico">
+	</head>
+	<body>
+		<button class="fullscreen" onclick="begin()">Begin</button>
+        <script>
+		function showdiv(id){
+                        if (document.getElementById(id).hidden){
+                                document.getElementById(id).hidden = false;
+                                document.getElementById(id+"a").innerHTML = document.getElementById(id+"a").innerHTML.replace("+","-")
+                        }else{
+                                document.getElementById(id).hidden = true;
+                                document.getElementById(id+"a").innerHTML = document.getElementById(id+"a").innerHTML.replace("-","+")
+                        }
+                }
+        </script>
+	</body>
+</html>
