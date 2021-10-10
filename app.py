@@ -33,9 +33,9 @@ def result():
         return render_template("a.html", im=str(results[no])+".png", score=str(score+amount), no=str(no+1))
     else:
         if (score == 166665):
-            #
+            return ""
         else:
-            #
+            return ""
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=PORT)
