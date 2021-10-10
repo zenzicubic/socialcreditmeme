@@ -6,13 +6,13 @@
 		<link rel="shortcut icon" href="/static/favicon.png">
 	</head>
 	<body>
-		<embed name="bg" src="/static/Dehao Zhang - Ching Chang Hon Chi-[AudioTrimmer.com]" loop="true" hidden="true" autostart="true">
+		<embed name="bg" src="/static/Dehao Zhang - Ching Chang Hon Chi-[AudioTrimmer.com].mp3" loop="true" hidden="true" autostart="true">
 		<p class="header">Social Credit Test</p>
 		<button class="fullscreen" onclick="begin()">Begin</button>
 		<form id="response" action="/question" hidden><input name="no" id="no" value="1"><input name="score" id="score" value="0"></form>
         <script>
         	function begin(){
-        		document.getElementById("myForm").submit();
+        		document.getElementById("response").submit();
         	}
         </script>
 	</body>
