@@ -43,12 +43,13 @@
         	}
         	function fillform(){
         		if (document.getElementById("buffer").innerHTML.charAt(0)==="["){
+        			console.log(document.getElementById("buffer").innerHTML);
         			data = JSON.parse(document.getElementById("buffer").innerHTML);
         			res=data[0];
         			ans=data[1][2];
         			document.getElementById("a1").innerHTML=data[1][0];
         			document.getElementById("a2").innerHTML=data[1][1];
-        			document.getElementById("question").innerHTML=`Question ${q.toString()}: ${data[1][3]}`;
+        			document.getElementById("question").innerHTML=`Question ${(q+1).toString()}: ${data[1][3]}`;
         		} else {
         			fillform();
         		}
