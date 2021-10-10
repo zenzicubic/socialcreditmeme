@@ -35,7 +35,6 @@
         	function getq(q1){
         		xhr = new XMLHttpRequest();
         		xhr.onload=function(){
-        			console.log(xhr.responseText);
         			document.getElementById("buffer").innerHTML=xhr.responseText;
         			data = JSON.parse(document.getElementById("buffer").innerHTML);
         			res=data[0];
