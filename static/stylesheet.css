@@ -19,10 +19,6 @@ button {
 	padding: 18% 10px;
 	width: 100%;
 }
-.center {
-	margin: 0 auto;
-	text-align: center;
-}
 button:hover {
 	background-color: #FF0114;
 }
@@ -34,6 +30,10 @@ body {
 		height: 25%;
 		width: 100%;
 	}
+	.header {
+		font-size:  10px;
+		text-align: center;
+	}
 }
 @media (pointer:fine) {
 	.option {
@@ -41,10 +41,8 @@ body {
 		width: 50%;
 	}
 	.header {
-		font-size:  10px;
-	}
-	.header {
 		font-size:  40px;
+		text-align: center;
 	}
 }
 .button-topleft {
