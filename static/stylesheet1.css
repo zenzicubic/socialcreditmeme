@@ -1,4 +1,4 @@
-p,h1,h2,h3,h4,h5 {
+span,p,h1,h2,h3,h4,h5 {
 	color: #5e2214;
 	font-family: Arial; 
 }
@@ -25,9 +25,6 @@ button:hover {
 body {
 	background-color:#FFF0D9;
 }
-.header {
-	text-align: center;
-}
 @media screen and (max-width: 600px) {
 	.option {
 		height: 25%;
@@ -35,6 +32,7 @@ body {
 	}
 	.header {
 		font-size:  10px;
+		text-align: center;
 	}
 }
 @media screen and (min-width: 600px) {
@@ -44,6 +42,7 @@ body {
 	}
 	.header {
 		font-size:  40px;
+		text-align: center;
 	}
 }
 .button-topleft {
