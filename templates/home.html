@@ -58,7 +58,7 @@
         	function addims(t){
         		const imgregex = /#.*\.png#/g;
         		matches = t.match(imgregex);
-        		if (matches.length == 0){
+        		if (matches == null){
         			return t;
         		} else {
         			return t.replace(imgregex, `<img class="img" src="/static/${matches[0].replace("#", "")}">`);
