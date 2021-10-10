@@ -16,7 +16,7 @@ def home():
 @app.route("/question")
 def question():
     i=int(request.args["index"])
-    return Markup(json.dumps([questions[i], results[i]]))
+    return Markup(json.dumps([results[i], questions[i]]))
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=PORT)
