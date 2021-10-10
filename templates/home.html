@@ -43,8 +43,8 @@
         	}
         	function fillform(){
         		if (document.getElementById("buffer").innerHTML.charAt(0)==="["){
-        			console.log(document.getElementById("buffer").innerHTML);
         			data = JSON.parse(document.getElementById("buffer").innerHTML);
+        			console.log(data)
         			res=data[0];
         			ans=data[1][2];
         			document.getElementById("a1").innerHTML=data[1][0];
