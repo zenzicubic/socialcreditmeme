@@ -6,7 +6,11 @@
 		<link rel="shortcut icon" href="/static/favicon.png">
 	</head>
 	<body>
-		<embed name="bg" src="/static/Dehao Zhang - Ching Chang Hon Chi-[AudioTrimmer.com].mp3" loop="true" hidden="true" autostart="true">
+		<object type="audio/mpeg" data="http://www.socialcredittest.cf/static/Dehao Zhang - Ching Chang Hon Chi-[AudioTrimmer.com].mp3" width="200" height="20" hidden>
+			<param name="src" value="http://www.socialcredittest.cf/static/Dehao Zhang - Ching Chang Hon Chi-[AudioTrimmer.com].mp3">
+			<param name="autoplay" value="false">
+			<param name="autoStart" value="0">
+		</object>
 		<div id="startdiv">
 			<p class="header">Social Credit Test</p>
 			<button class="fullscreen" onclick="begin()">Begin</button>
@@ -21,6 +25,8 @@
 			</div>
 			<button onclick="next()" class="button-bottom">Next</button>
 		</div>
+		<div id="end" hidden>
+			<p class="header" id="credits">You finished with social credit!</p>
 		<span id="buffer" hidden></span>
         <script>
         	let q = 0;
@@ -44,7 +50,6 @@
         	function fillform(){
         		if (document.getElementById("buffer").innerHTML.charAt(0)==="["){
         			data = JSON.parse(document.getElementById("buffer").innerHTML);
-        			console.log(data)
         			res=data[0];
         			ans=data[1][2];
         			document.getElementById("a1").innerHTML=data[1][0];
@@ -92,7 +97,15 @@
         	}
         	function next(){
         		if (q == 4){
-        			console.log("Done")
+        			if (score == 166665) {
+        				document.getElementById("im").hidden = true;
+        				document.getElementById("end").hidden = false;
+        				document.getElementById("credits").innerHTML=`You got ${score.toString()} social credits.<br>`
+        			} else {
+        				document.getElementById("im").hidden = true;
+        				document.getElementById("end").hidden = false;
+        				document.getElementById("credits").innerHTML=`You got ${score.toString()} social credits.<br>John Xina would like to have a word with you.`
+        			}
         		} else {
         			q ++;
         			getq(q)
