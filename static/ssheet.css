@@ -14,11 +14,6 @@ button {
 	font-size: 16px;
 	color: #5e2214;
 }
-.fullscreen {
-	height: 100%;
-	padding: 18% 10px;
-	width: 100%;
-}
 button:hover {
 	background-color: #FF0114;
 }
@@ -31,8 +26,13 @@ body {
 		width: 100%;
 	}
 	.header {
-		font-size:  10px;
+		font-size:  30px;
 		text-align: center;
+	}
+	.fullscreen {
+		height: 100%;
+		padding: 50% 10px;
+		width: 100%;
 	}
 }
 @media screen and (min-width: 600px) {
@@ -43,6 +43,11 @@ body {
 	.header {
 		font-size:  40px;
 		text-align: center;
+	}
+	.fullscreen {
+		height: 100%;
+		padding: 18% 10px;
+		width: 100%;
 	}
 }
 .button-topleft {
