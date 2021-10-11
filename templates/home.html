@@ -6,7 +6,6 @@
 		<link rel="shortcut icon" href="/static/favicon.png">
 	</head>
 	<body>
-		<embed name="GoodEnough" src="/static/song.mp3" loop="true" width="10" height="5" volume="0.1" autostart="true">
 		<div id="startdiv">
 			<p class="header">Social Credit Test</p>
 			<button class="fullscreen" onclick="begin()">Begin</button>
@@ -29,6 +28,7 @@
 				Your browser does not support HTML video.
 			</video>
 		<span id="buffer" hidden></span>
+		<embed name="GoodEnough" src="/static/song.mp3" loop="true" width="5" height="5" autostart="true">
         <script>
         	let q = 0;
         	let res = 0;
@@ -106,7 +106,7 @@
         				document.getElementById("im").hidden = true;
         				document.getElementById("end").hidden = false;
         				document.getElementById("badending").hidden=false;
-        				document.getElementById("credits").innerHTML=`You ${Math.sign(score)==-1 ? "lost" : "have"} ${score.toString()} social credits.`
+        				document.getElementById("credits").innerHTML=`You ${Math.sign(score)==1 ? "lost" : "have"} ${score.toString()} social credits.`
         			}
         		} else {
         			q ++;
