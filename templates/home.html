@@ -5,31 +5,32 @@
 		<link rel="stylesheet" type="text/css" href="/static/stylest.css">
 		<link rel="shortcut icon" href="/static/favicon.png">
 	</head>
-	<body>
-		<div id="startdiv">
-			<p class="header">Social Credit Test</p>
-			<button class="fullscreen" onclick="begin()">Begin</button>
-		</div>
-		<div id="options" hidden>
-			<p class="header" id="question">Question #: #</p>
-			<button class="button-top" id="a1" onclick="a1()">#</button><br>
-			<button class="button-bottom" id="a2" onclick="a2()">#</button>
-		</div>
-		<div id="im" hidden>
-			<div id="ims">
+	<body>	
+		<div id="body" onmouseover="playaudio()">
+			<div id="startdiv">
+				<p class="header">Social Credit Test</p>
+				<button class="fullscreen" onclick="begin()">Begin</button>
 			</div>
-			<button onclick="next()" class="button-bottom">Next</button>
-		</div>
-		<div id="end" hidden>
-			<p class="header" id="credits">You finished with social credit!</p>
-			<video controls id="badending" class="video" hidden>
-				<source src="/static/badending.avi" type="video/avi">
-				<source src="/static/badending.ogg" type="video/ogg">
-				Your browser does not support HTML video.
-			</video>
+			<div id="options" hidden>
+				<p class="header" id="question">Question #: #</p>
+				<button class="button-top" id="a1" onclick="a1()">#</button><br>
+				<button class="button-bottom" id="a2" onclick="a2()">#</button>
+			</div>
+			<div id="im" hidden>
+				<div id="ims">
+				</div>
+				<button onclick="next()" class="button-bottom">Next</button>
+			</div>
+			<div id="end" hidden>
+				<p class="header" id="credits">You finished with social credit!</p>
+				<video controls id="badending" class="video" hidden>
+					<source src="/static/badending.avi" type="video/avi">
+					<source src="/static/badending.ogg" type="video/ogg">
+					Your browser does not support HTML video.
+				</video>
+			</div>
 		</div>
 		<span id="buffer" hidden></span>
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		<audio id="sound">
 			<source src="/static/song.mp3" type="audio/mpeg">
 			Your browser does not support the audio element.
@@ -39,10 +40,12 @@
 	        	let res = 0;
 	        	let ans = 0;
 	        	let score = 0;
+	        	function playaudio(){
+	        		document.getElementById("sound").play();
+	        	}
 	        	function begin(){
 	        		document.getElementById("startdiv").hidden = true;
 	        		getq(q);
-	        		document.getElementById("sound").play();
 	        		document.getElementById("options").hidden = false;
 	        	}
 	        	function getq(q1){
