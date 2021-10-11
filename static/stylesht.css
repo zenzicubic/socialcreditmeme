@@ -22,6 +22,10 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+.video {
+	width:  100%;
+	height: 80%;
+}
 @media screen and (max-width: 600px) {
 	.button-top {
 		height: 35%;
