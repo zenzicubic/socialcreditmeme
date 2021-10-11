@@ -24,8 +24,7 @@
 			<div id="end" hidden>
 				<p class="header" id="credits">You finished with social credit!</p>
 				<video controls id="badending" class="video" hidden>
-					<source src="/static/badending.avi" type="video/avi">
-					<source src="/static/badending.ogg" type="video/ogg">
+					<source src="/static/badending.mp4" type="video/mp4">
 					Your browser does not support HTML video.
 				</video>
 				<p>Made by <a href="https://twitter.com/silavtuber">Sila</a>.</p>
@@ -111,6 +110,7 @@
 	        			if (score == 166665) {
 	        				document.getElementById("im").hidden = true;
 	        				document.getElementById("end").hidden = false;
+	        				document.getElementById("goodending").hidden=false;
 	        				document.getElementById("credits").innerHTML=`You have ${score.toString()} social credits.<br>`
 	        			} else {
 	        				document.getElementById("im").hidden = true;
