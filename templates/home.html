@@ -46,16 +46,19 @@
 	        	let ans = 0;
 	        	let score = 0;
 	        	function playaudio(){
+	        		// Play audio on document hover
 	        		let s = document.getElementById("sound");
 	        		s.volume = 0.3;
 	        		s.play();
 	        	}
 	        	function begin(){
+	        		// Start game when begin button clicked
 	        		document.getElementById("startdiv").hidden = true;
 	        		getq(q);
 	        		document.getElementById("options").hidden = false;
 	        	}
 	        	function getq(q1){
+	        		//Make XHR to obtain question JSON from server (yes I know it's janky)
 	        		xhr = new XMLHttpRequest();
 	        		xhr.onload=function(){
 	        			document.getElementById("buffer").innerHTML=xhr.responseText;
@@ -65,6 +68,7 @@
 	        		xhr.send();
 	        	}
 	        	function fillform(){
+	        		// Write XHR data from buffer to document (img tags didn't go through so had to get a bit creative)
 	        		if (document.getElementById("buffer").innerHTML.charAt(0)==="["){
 	        			data = JSON.parse(document.getElementById("buffer").innerHTML);
 	        			res=data[0];
@@ -78,6 +82,7 @@
 	        		}
 	        	}
 	        	function addims(t){
+	        		// img tag code 
 	        		const imgregex = /#.*\.png#/g;
 	        		matches = t.match(imgregex);
 	        		if (matches == null){
@@ -87,6 +92,7 @@
 	        		}
 	        	}
 	        	function a1(){
+	        		// check whether clicked button is correct answer
 	        		if (ans == 0){
 	        			score += res;
 	        			document.getElementById("options").hidden = true;
@@ -100,6 +106,7 @@
 	        		}
 	        	}
 	        	function a2(){
+	        		// check whether clicked button is correct answer again
 	        		if (ans == 1){
 	        			score += res;
 	        			document.getElementById("options").hidden = true;
@@ -113,6 +120,7 @@
 	        		}
 	        	}
 	        	function next(){
+	        		// advance Q or end game when 'next' button clicked
 	        		if (q == 4){
 	        			if (score == 166665) {
 	        				document.getElementById("im").hidden = true;
