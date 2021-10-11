@@ -30,14 +30,17 @@
 		</div>
 		<span id="buffer" hidden></span>
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-		<embed id="sound" name="sound" src="/static/song.mp3" loop="true" width="10" height="10" autostart="true">
+		<audio id="sound">
+			<source src="horse.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
         	<script>
 	        	let q = 0;
 	        	let res = 0;
 	        	let ans = 0;
 	        	let score = 0;
 	        	window.onload=function(){
-	        		document.getElementById("sound").play()
+	        		document.getElementById("sound").play();
 	        	}
 	        	function begin(){
 	        		document.getElementById("startdiv").hidden = true;
