@@ -23,6 +23,11 @@
 		</div>
 		<div id="end" hidden>
 			<p class="header" id="credits">You finished with social credit!</p>
+			<video controls>
+				<source src="mov_bbb.mp4" type="video/avi" id="video">
+				<source src="mov_bbb.ogg" type="video/ogg" id="audio">
+				Your browser does not support HTML video.
+			</video>
 		<span id="buffer" hidden></span>
         <script>
         	let q = 0;
@@ -96,11 +101,13 @@
         			if (score == 166665) {
         				document.getElementById("im").hidden = true;
         				document.getElementById("end").hidden = false;
-        				document.getElementById("credits").innerHTML=`You got ${score.toString()} social credits.<br>`
+        				document.getElementById("video").src="static/badending.avi"
+					document.getElementById("audio").src="static/badending.ogg"
+        				document.getElementById("credits").innerHTML=`You have ${score.toString()} social credits.<br>`
         			} else {
         				document.getElementById("im").hidden = true;
         				document.getElementById("end").hidden = false;
-        				document.getElementById("credits").innerHTML=`You ${Math.sign(score)==-1 ? "lost" : "got"} ${score.toString()} social credits.<br>John Xina would like to have a word with you.`
+        				document.getElementById("credits").innerHTML=`You ${Math.sign(score)==-1 ? "lost" : "have"} ${score.toString()} social credits.<br>John Xina would like to have a word with you.`
         			}
         		} else {
         			q ++;
